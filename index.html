@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Application</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <header>
+        <h1><i class="fa-solid fa-list-check"></i> To-Do List</h1>
+
+        <button id="themeBtn">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+    </header>
+
+    <!-- Add Task -->
+    <section class="task-form">
+
+        <input
+            type="text"
+            id="taskInput"
+            placeholder="Enter Task">
+
+        <select id="category">
+            <option value="">Category</option>
+            <option>Personal</option>
+            <option>Work</option>
+            <option>Study</option>
+            <option>Shopping</option>
+            <option>Health</option>
+        </select>
+
+        <select id="priority">
+            <option value="">Priority</option>
+            <option>High</option>
+            <option>Medium</option>
+            <option>Low</option>
+        </select>
+
+        <input
+            type="date"
+            id="dueDate">
+
+        <button id="addTaskBtn">
+            <i class="fa-solid fa-plus"></i>
+            Add Task
+        </button>
+
+    </section>
+
+    <!-- Search -->
+    <section class="search-box">
+
+        <input
+            type="text"
+            id="search"
+            placeholder="Search task...">
+
+    </section>
+
+    <!-- Filters -->
+    <section class="filters">
+
+        <button class="filter active" data-filter="all">
+            All
+        </button>
+
+        <button class="filter" data-filter="pending">
+            Pending
+        </button>
+
+        <button class="filter" data-filter="completed">
+            Completed
+        </button>
+
+    </section>
+
+    <!-- Statistics -->
+    <section class="stats">
+
+        <div class="card">
+            <h3>Total</h3>
+            <span id="totalTasks">0</span>
+        </div>
+
+        <div class="card">
+            <h3>Completed</h3>
+            <span id="completedTasks">0</span>
+        </div>
+
+        <div class="card">
+            <h3>Pending</h3>
+            <span id="pendingTasks">0</span>
+        </div>
+
+    </section>
+
+    <!-- Task List -->
+    <section>
+
+        <ul id="taskList">
+
+            <!-- Tasks will appear here -->
+
+        </ul>
+
+    </section>
+
+</div>
+
+<!-- Template -->
+
+<template id="taskTemplate">
+
+    <li class="task">
+
+        <div class="left">
+
+            <input
+                type="checkbox"
+                class="complete">
+
+            <div>
+
+                <h3 class="task-name"></h3>
+
+                <p>
+
+                    <span class="task-category"></span>
+
+                    |
+
+                    <span class="task-priority"></span>
+
+                    |
+
+                    <span class="task-date"></span>
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="actions">
+
+            <button class="edit">
+
+                <i class="fa-solid fa-pen"></i>
+
+            </button>
+
+            <button class="delete">
+
+                <i class="fa-solid fa-trash"></i>
+
+            </button>
+
+        </div>
+
+    </li>
+
+</template>
+
+<script src="script.js"></script>
+
+</body>
+</html>
